@@ -1,0 +1,14 @@
+[package]
+authors = ["zaaack <zaaack@qq.com>"]
+name = "debug"
+version = "0.1.0"
+exclude = ["docs/**/*"]
+
+[features]
+default = []
+disable = []
+
+[dependencies]
+colored = "1.5.2"
+globset = "0.2.0"
+lazy_static = "0.2.8"
