@@ -9,7 +9,7 @@ license = "MIT"
 name = "debug-rs"
 readme = "README.md"
 repository = "https://github.com/zaaack/debug-rs/"
-version = "0.1.1"
+version = "0.1.2"
 
 [dependencies]
 colored = "1.5.2"

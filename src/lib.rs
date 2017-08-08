@@ -41,16 +41,16 @@ lazy_static!{
         .as_str()
         .split(',')
         .fold((vec![], vec![]), |mut acc, s| {
-            if &s[0..1] == "-" {
+            if s.len() > 1 && &s[0..1] == "-" {
                 acc.1.push(Glob::new(&s[1..])
                             .unwrap()
                             .compile_matcher());
-            } else  {
+            } else if s.len() > 0 {
                 acc.0.push(Glob::new(s)
                             .unwrap()
                             .compile_matcher());
             }
-            return acc;
+            acc
         });
 }
 

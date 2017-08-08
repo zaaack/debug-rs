@@ -11,3 +11,4 @@ script:
   - DEBUG=debug* cargo test -- --nocapture
   - DEBUG=* cargo test -- --nocapture
   - DEBUG=*,-debug* cargo test -- --nocapture
+  - cargo test -- --nocapture
