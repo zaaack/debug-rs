@@ -36,12 +36,12 @@ lazy_static!{
         .as_str()
         .split(',')
         .fold((vec![], vec![]), |mut acc, s| {
-            if &s[0..0] == "-" {
+            if &s[0..1] == "-" {
                 acc.1.push(Glob::new(&s[1..])
                             .unwrap()
                             .compile_matcher());
             } else  {
-                acc.1.push(Glob::new(s)
+                acc.0.push(Glob::new(s)
                             .unwrap()
                             .compile_matcher());
             }

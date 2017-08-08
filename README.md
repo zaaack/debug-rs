@@ -1,4 +1,14 @@
-# debug-rs
+# debug &emsp; [![Build Status]][travis] [![Latest Version]][crates.io] [![docs]][docs.rs] [![License]][License Link]
+
+[Build Status]: https://api.travis-ci.org/zaaack/debug-rs.svg?branch=master
+[travis]: https://travis-ci.org/zaaack/debug-rs
+[Latest Version]: https://img.shields.io/crates/v/debug.svg
+[crates.io]: https://crates.io/crates/debug
+[docs]: https://docs.rs/debug/badge.svg
+[docs.rs]: https://docs.rs/debug/
+[License]: https://img.shields.io/badge/license-MIT-blue.svg
+[License Link]: https://github.com/zaaack/debug-rs/blob/master/LICENSE
+
 A debug crate for rust inspired by NodeJS [debug](https://github.com/visionmedia/debug) module.
 
 

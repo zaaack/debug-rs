@@ -1,0 +1,13 @@
+language: rust
+rust:
+  - stable
+  - beta
+  - nightly
+matrix:
+  allow_failures:
+    - rust: nightly
+script:
+  - cargo build --verbose
+  - DEBUG=debug* cargo test -- --nocapture
+  - DEBUG=* cargo test -- --nocapture
+  - DEBUG=*,-debug* cargo test -- --nocapture
