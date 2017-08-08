@@ -1,24 +1,21 @@
 [package]
 authors = ["Zack Young <zaaack@qq.com>"]
-name = "debug-rs"
-version = "0.1.0"
-exclude = ["docs/**/*"]
-description = """
-  A debug crate for rust inspired by NodeJS debug module, colored, including crate name, file name and line, filtered by glob patterns.
-"""
-license = "MIT"
-documentation = "https://docs.rs/debug/"
-repository = "https://github.com/zaaack/debug-rs/"
-readme = "README.md"
-keywords = ["debug", "dev", "development"]
 categories = ["development-tools", "development-tools::debugging"]
-
-
-[features]
-default = []
-disable = []
+description = "  A debug crate for rust inspired by NodeJS debug module, colored, including crate name, file name and line, filtered by glob patterns.\n"
+documentation = "https://docs.rs/debug/"
+exclude = ["docs/**/*"]
+keywords = ["debug", "dev", "development"]
+license = "MIT"
+name = "debug-rs"
+readme = "README.md"
+repository = "https://github.com/zaaack/debug-rs/"
+version = "0.1.1"
 
 [dependencies]
 colored = "1.5.2"
 globset = "0.2.0"
 lazy_static = "0.2.8"
+
+[features]
+default = []
+disable = []
