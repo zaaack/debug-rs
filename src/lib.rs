@@ -1,11 +1,16 @@
 //! A debug crate for rust inspired by NodeJS [debug](https://github.com/visionmedia/debug) module.
 //!
+//! ## Features
+//! * colored
+//! * including crate name, file name and line
+//! * filtered by glob patterns.
+//!
 //! ## Usage
 //! Here is an simple example in examples folder:
 //!
 //! ```rust
 //! #[macro_use]
-//! extern crate debug;
+//! extern crate debug_rs;
 //!
 //!
 //! fn main() {
@@ -87,7 +92,7 @@ pub fn is_debug(pkg_name: &str, file: &str) -> bool {
 ///
 /// ```
 ///   #[macro_use]
-/// extern crate debug;
+/// extern crate debug_rs;
 ///
 /// fn main() {
 ///     debug!(666, 33, "aaa");

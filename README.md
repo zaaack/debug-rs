@@ -1,22 +1,38 @@
-# debug &emsp; [![Build Status]][travis] [![Latest Version]][crates.io] [![docs]][docs.rs] [![License]][License Link]
+# debug-rs &emsp; [![Build Status]][travis] [![Latest Version]][crates.io] [![docs]][docs.rs] [![License]][License Link]
 
 [Build Status]: https://api.travis-ci.org/zaaack/debug-rs.svg?branch=master
 [travis]: https://travis-ci.org/zaaack/debug-rs
 [Latest Version]: https://img.shields.io/crates/v/debug.svg
-[crates.io]: https://crates.io/crates/debug
-[docs]: https://docs.rs/debug/badge.svg
-[docs.rs]: https://docs.rs/debug/
+[crates.io]: https://crates.io/crates/debug-rs
+[docs]: https://docs.rs/debug-rs/badge.svg
+[docs.rs]: https://docs.rs/debug-rs/
 [License]: https://img.shields.io/badge/license-MIT-blue.svg
 [License Link]: https://github.com/zaaack/debug-rs/blob/master/LICENSE
 
 A debug crate for rust inspired by NodeJS [debug](https://github.com/visionmedia/debug) module.
 
+## Features
+
+* colored
+* including crate name, file name and line
+* filtered by glob patterns.
+
+## Install
+
+```toml
+debug-rs = "0.1.0"
+```
+
+or using cargo-edit
+```sh
+cargo add debug-rs
+```
 
 ## Usage
 Here is the code in examples folder:  
 ```rust
 #[macro_use]
-extern crate debug;
+extern crate debug_rs;
 
 
 fn main() {

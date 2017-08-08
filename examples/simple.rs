@@ -1,5 +1,5 @@
 #[macro_use]
-extern crate debug;
+extern crate debug_rs;
 
 
 fn main() {
