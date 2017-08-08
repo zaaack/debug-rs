@@ -2,7 +2,7 @@
 
 [Build Status]: https://api.travis-ci.org/zaaack/debug-rs.svg?branch=master
 [travis]: https://travis-ci.org/zaaack/debug-rs
-[Latest Version]: https://img.shields.io/crates/v/debug.svg
+[Latest Version]: https://img.shields.io/crates/v/debug-rs.svg
 [crates.io]: https://crates.io/crates/debug-rs
 [docs]: https://docs.rs/debug-rs/badge.svg
 [docs.rs]: https://docs.rs/debug-rs/
@@ -53,6 +53,7 @@ If environment variable `DEBUG` is undefined, then it won't print anything.
 
 1. Single glob pattern for `<package name>:<file name>`: e.g. `DEBUG=debug*`
 2. Multi glob patterns separated by comma: e.g. `DEBUG=debug:examples*,hyper*,`
+3. Exclude global patterns by prefix "-": e.g. `DEBUG=*,-not_this*`
 
 
 ## Output format
