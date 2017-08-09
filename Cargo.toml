@@ -9,7 +9,7 @@ license = "MIT"
 name = "debug-rs"
 readme = "README.md"
 repository = "https://github.com/zaaack/debug-rs/"
-version = "0.1.2"
+version = "0.1.3"
 
 [dependencies]
 colored = "1.5.2"
@@ -17,6 +17,6 @@ globset = "0.2.0"
 lazy_static = "0.2.8"
 
 [features]
+debug_build_only = []
 default = ["debug_build_only"]
 disable = []
-debug_build_only = []
