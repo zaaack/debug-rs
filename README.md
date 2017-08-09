@@ -20,7 +20,7 @@ A debug crate for rust inspired by NodeJS [debug](https://github.com/visionmedia
 ## Install
 
 ```toml
-debug-rs = "0.1.0"
+debug-rs = "*"
 ```
 
 or using cargo-edit
@@ -48,6 +48,17 @@ Then run with environment variable `DEBUG=debug` (because the examples' package 
 
 If environment variable `DEBUG` is undefined, then it won't print anything.
 
+## Windows
+
+Running with env variables in windows shell might be a little different:
+
+```sh
+DEBUG=*,-not_this cargo run // for *unix
+// or
+set DEBUG=*,-not_this; cargo run // for windows
+// or
+$env:DEBUG = "*,-not_this"; cargo run // for PowerShell
+```
 
 ## DEBUG format
 
@@ -61,6 +72,24 @@ If environment variable `DEBUG` is undefined, then it won't print anything.
 ```
 <package name>:<file name>:L<line number> ...custom variables
 ```
+
+## Performance
+
+`debug_build_only` feature can make debug macro won't generate any code in release mode, and default is turn on. you can disable it by config features in Cargo.toml.
+
+Working in release mode:
+```toml
+
+[dependencies]
+debug-rs = { version = "*", default-features=false }
+```
+
+Controlled by features:
+```toml
+[dependencies]
+debug-rs = { version = "*", default-features=false, features=["disable"] }
+```
+
 
 ## License
 

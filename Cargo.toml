@@ -17,5 +17,6 @@ globset = "0.2.0"
 lazy_static = "0.2.8"
 
 [features]
-default = []
+default = ["debug_build_only"]
 disable = []
+debug_build_only = []

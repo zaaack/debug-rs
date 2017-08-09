@@ -114,6 +114,7 @@ pub fn is_debug(pkg_name: &str, file: &str) -> bool {
 #[macro_export]
 macro_rules! debug {
     ( $( $x:expr ),* ) => {
+        #[cfg(any(not(feature = "debug_build_only"), debug_assertions))]
         #[cfg(not(feature = "disable"))]
         {
             let pkg_name = env!("CARGO_PKG_NAME");
