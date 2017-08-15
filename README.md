@@ -42,7 +42,7 @@ fn main() {
 }
 ```
 
-Then run with environment variable `DEBUG=debug` (because the examples' package name is still `debug`):
+Then run with environment variable `DEBUG=debug:examples*` (because the examples' package name is still `debug`):
 
 ![](docs/out.png)
 
@@ -53,11 +53,11 @@ If environment variable `DEBUG` is undefined, then it won't print anything.
 Running with env variables in windows shell might be a little different:
 
 ```sh
-DEBUG=*,-not_this cargo run // for *unix
-// or
-set DEBUG=*,-not_this; cargo run // for windows
-// or
-$env:DEBUG = "*,-not_this"; cargo run // for PowerShell
+DEBUG=*,-not_this cargo run # for *unix
+# or
+set DEBUG=*,-not_this; cargo run # for windows
+# or
+$env:DEBUG = "*,-not_this"; cargo run # for PowerShell
 ```
 
 ## DEBUG format
