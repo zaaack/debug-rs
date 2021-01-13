@@ -39,6 +39,9 @@ fn main() {
     debug!(666, 33, "aaa");
 
     debug!(vec![1, 2, 3]);
+
+    debugf!("num: {}, str: {},", 8, "129");
+    debugf!("num: {:?}, str: {:?},", 129, "8");
 }
 ```
 

@@ -12,11 +12,12 @@
 //! #[macro_use]
 //! extern crate debug_rs;
 //!
-//!
 //! fn main() {
 //!     debug!(666, 33, "aaa");
-//!
 //!     debug!(vec![1, 2, 3]);
+//!
+//!     debugf!("num: {}, str: {},", 8, "129");
+//!     debugf!("num: {:?}, str: {:?},", 129, "8");
 //! }
 //! ```
 //!
@@ -130,12 +131,44 @@ macro_rules! debug {
     };
 }
 
+/// Debug variables like `debug!`, but applying the `format!` macro for all parameters
+///
+///
+/// ```
+///   #[macro_use]
+/// extern crate debug_rs;
+///
+/// fn main() {
+///     debugf!("num: {}, str: {},", 8, "129");
+///
+///     debugf!("num: {:?}, str: {:?},", 129, "8");
+/// }
+/// ```
+#[macro_export]
+macro_rules! debugf {
+    ( $( $x:expr ),+ ) => {
+        #[cfg(any(not(feature = "debug_build_only"), debug_assertions))]
+        #[cfg(not(feature = "disable"))]
+        {
+            let pkg_name = env!("CARGO_PKG_NAME");
+            let file = file!();
+            if $crate::is_debug(pkg_name, file) {
+                $crate::debug_meta(pkg_name, file, line!());
+                let res = format!($($x),+);
+                println!("{}", res);
+            }
+        }
+    };
+}
+
 #[cfg(test)]
 mod tests {
     #[test]
     fn it_works() {
         debug!("aaa", 123, "bbb");
-
         debug!(vec![1, 2, 3]);
+
+        debugf!("num: {}, str: {},", 8, "129");
+        debugf!("num: {:?}, str: {:?},", 129, "8");
     }
 }
